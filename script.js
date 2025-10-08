@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initRuleCardAnimations();
     initRoleModal();
     initSearch();
+    initSidebarChapters();
 });
 // Global search with highlight and results
 function initSearch() {
@@ -331,6 +332,86 @@ function initHeaderScroll() {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
+        }
+    });
+}
+
+// Sidebar chapters (accordion-like behavior)
+function initSidebarChapters() {
+    const body = document.body;
+    const sidebar = document.getElementById('sidebar');
+    const toggle = document.getElementById('sidebarToggle');
+    const links = sidebar ? sidebar.querySelectorAll('.chapter-link') : [];
+
+    if (!sidebar || !toggle) {
+        console.warn('Sidebar or toggle button not found');
+        return;
+    }
+
+    if (links.length === 0) {
+        console.warn('No chapter links found in sidebar');
+        return;
+    }
+
+    function openSidebar() {
+        sidebar.classList.add('open');
+        body.classList.add('sidebar-open');
+    }
+
+    function closeSidebar() {
+        sidebar.classList.remove('open');
+        body.classList.remove('sidebar-open');
+    }
+
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (sidebar.classList.contains('open')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    });
+
+    // Добавляем анимацию для кнопки
+    toggle.addEventListener('mouseenter', () => {
+        toggle.style.transform = 'scale(1.1)';
+    });
+
+    toggle.addEventListener('mouseleave', () => {
+        if (!sidebar.classList.contains('open')) {
+            toggle.style.transform = 'scale(1)';
+        }
+    });
+
+    links.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            const targetSection = document.querySelector(targetId);
+            links.forEach(l => l.classList.remove('active'));
+            btn.classList.add('active');
+            if (targetSection) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const y = targetSection.offsetTop - headerHeight - 8;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+            // Автоматически сворачиваем панель после перехода на мобильных
+            if (window.innerWidth < 1024) {
+                closeSidebar();
+            }
+        });
+    });
+
+    // Закрытие по клику вне панели (на десктопе панель может оставаться открытой)
+    document.addEventListener('click', (e) => {
+        if (!sidebar.contains(e.target) && e.target !== toggle && window.innerWidth < 1024) {
+            closeSidebar();
+        }
+    });
+
+    // Закрытие по клавише ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+            closeSidebar();
         }
     });
 }

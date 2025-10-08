@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
+    
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -17,14 +17,7 @@
                     <i class="fas fa-tint"></i>
                     <h1>LIQUID</h1>
                 </div>
-                <nav class="nav">
-                    <a href="#intro" class="nav-link">Введение</a>
-                    <a href="#chapter1" class="nav-link">Глава 1</a>
-                    <a href="#chapter2" class="nav-link">Глава 2</a>
-                    <a href="#chapter3" class="nav-link">Глава 3</a>
-                    <a href="#chapter4" class="nav-link">Глава 4</a>
-                    <a href="#chapter5" class="nav-link">Глава 5</a>
-                </nav>
+                
                 <div class="search-container">
                     <input type="text" id="globalSearch" placeholder="Поиск по правилам..." class="search-input">
                     <div id="searchResults" class="search-results"></div>
@@ -38,6 +31,24 @@
             </div>
         </div>
     </header>
+    
+    <!-- Кнопка сайдбара вынесена наружу -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Открыть список глав" title="Открыть навигацию по главам">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <nav class="chapters-nav" id="chaptersNav">
+                <button class="chapter-link" data-target="#intro">Введение</button>
+                <button class="chapter-link" data-target="#chapter1">Глава 1</button>
+                <button class="chapter-link" data-target="#chapter2">Глава 2</button>
+                <button class="chapter-link" data-target="#chapter3">Глава 3</button>
+                <button class="chapter-link" data-target="#chapter4">Глава 4</button>
+                <button class="chapter-link" data-target="#chapter5">Глава 5</button>
+            </nav>
+        </div>
+    </aside>
     <section class="hero">
         <div class="container">
             <div class="hero-content">

@@ -22,6 +22,183 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    transform: translateX(-100%);
+    transition: var(--transition);
+    z-index: 1100;
+    pointer-events: none;
+    background: var(--background-section);
+    border-right: 1px solid var(--border-color);
+    box-shadow: var(--shadow-secondary);
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+/* Оверлей для мобильного меню */
+.sidebar::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.sidebar.open::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-inner {
+    position: relative;
+    height: 100%;
+    padding: 80px 16px 16px 16px; /* отступ под шапку */
+    background: var(--background-section);
+    border-right: 1px solid var(--border-color);
+    box-shadow: var(--shadow-secondary);
+    pointer-events: auto;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 100px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: #fff;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    transition: var(--transition);
+    opacity: 1;
+    visibility: visible;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Когда сайдбар открыт, сдвигаем кнопку к его краю, чтобы можно было закрыть */
+body.sidebar-open .sidebar-toggle {
+    left: 300px; /* 280px ширина сайдбара + небольшой отступ */
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 1024px) {
+    body.sidebar-open .sidebar-toggle { left: 260px; }
+}
+
+@media (max-width: 768px) {
+    /* На мобильных сайдбар на всю ширину: кнопку уводим к правому краю */
+    body.sidebar-open .sidebar-toggle { left: calc(100% - 70px); }
+}
+
+.sidebar-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+}
+
+/* Пульсирующая анимация для привлечения внимания */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 12px 35px rgba(0, 212, 255, 0.8), 0 0 25px rgba(0, 212, 255, 0.6);
+        transform: scale(1.05);
+    }
+}
+
+.chapters-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chapter-link {
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: var(--background-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+    font-weight: 500;
+    display: block;
+    text-decoration: none;
+}
+
+.chapter-link:hover,
+.chapter-link.active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.15);
+}
+
+/* Смещение контента, чтобы освободить место для открытого сайдбара */
+body.sidebar-open .header,
+body.sidebar-open .hero,
+body.sidebar-open .section,
+body.sidebar-open .footer {
+    margin-left: 280px;
+    transition: var(--transition);
+}
+
+@media (max-width: 1024px) {
+    .sidebar { width: 240px; transform: translateX(-100%); }
+    body.sidebar-open .header,
+    body.sidebar-open .hero,
+    body.sidebar-open .section,
+    body.sidebar-open .footer { margin-left: 240px; }
+}
+
+@media (max-width: 768px) {
+    /* На мобильных: фулскрин панель поверх контента */
+    .sidebar {
+        width: 100%;
+        max-width: none;
+        background: var(--background-section);
+        z-index: 2000;
+        pointer-events: auto;
+    }
+    .sidebar-inner {
+        padding: 84px 16px 20px 16px;
+    }
+    .sidebar-toggle { 
+        top: 20px; 
+        left: 20px; 
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+    .chapters-nav { gap: 12px; }
+    .chapter-link { padding: 14px 16px; font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+    .sidebar-inner { padding: 72px 14px 16px 14px; }
+    .sidebar-toggle { width: 40px; height: 40px; top: 14px; left: 14px; }
+    .chapter-link { padding: 12px 14px; font-size: 1rem; }
+}
+
+
 /* Light theme variables */
 body.light-theme {
     --text-primary: #1a1a1a;
