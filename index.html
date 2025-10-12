@@ -49,6 +49,9 @@
                 <button class="chapter-link" data-target="#chapter3">Глава 3</button>
                 <button class="chapter-link" data-target="#chapter4">Глава 4</button>
                 <button class="chapter-link" data-target="#chapter5">Глава 5</button>
+                <button class="chapter-link" data-target="#chapter6">Глава 6</button>
+                <button class="chapter-link" data-target="#chapter7">Глава 7</button>
+                <button class="chapter-link" data-target="#chapter8">Глава 8</button>
             </nav>
         </div>
     </aside>
@@ -438,8 +441,46 @@
             </div>
         </div>
     </section>
+    <section id="chapter4" class="section chapter-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Общение с администрацией</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="chapter-content">
+                <div class="rule-card">
+                    <div class="rule-number">4.1</div>
+                    <div class="rule-content">
+                        <h3>Вызов администратора</h3>
+                        <p>При обращении к администрации необходимо сообщить никнейм нарушителя и суть нарушения.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">4.2</div>
+                    <div class="rule-content">
+                        <h3>Запрет на попрошайничество</h3>
+                        <p>Запрещено выпрашивать у администрации профессии или иные игровые блага.</p>
+                        <div class="penalty">
+                            <i class="fas fa-comment-slash"></i>
+                            <span>Отключение чата на срок от 10 до 60 минут.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">4.3</div>
+                    <div class="rule-content">
+                        <h3>Уход от ответственности и обман (DCTAP/LTAP/DTAP)</h3>
+                        <p>Запрещено покидать сервер или создавать помехи в ходе разборок с целью избежать наказания. Запрещен обман администрации</p>
+                    </div>
+                    <div class="penalty">
+                        <i class="fas fa-comment-slash"></i>
+                        <span>Бан от 6 часов до перманентный.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Chapter 4 -->
     <section id="chapter4" class="section chapter-section">
         <div class="container">
             <div class="section-header">
@@ -593,6 +634,28 @@
                     <div class="rule-content">
                         <h3>Шумы в голосовом чате</h3>
                         <p>Запрещено чрезмерное использование посторонних звуков без Push-to-Talk. Наказание: предупреждение, затем мут от 10 мин.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">4.17</div>
+                    <div class="rule-content">
+                        <h3>Флуд</h3>
+                        <p>От 4-х и более одинаковых/однотипных символов в течение 5 минут, которые не несут никакой информационной нагрузки.</p>
+                        <div class="penalty">
+                            <i class="fas fa-comment-slash"></i>
+                            <span>Мут от 10 до 60 минут, повторно — бан 1–3 дня.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">4.18</div>
+                    <div class="rule-content">
+                        <h3>Спам</h3>
+                        <p>От 2-х и более одинаковых/однотипных символов в течение 5 минут, которые не несут никакой информационной нагрузки.</p>
+                        <div class="penalty">
+                            <i class="fas fa-comment-slash"></i>
+                            <span>Мут от 10 до 60 минут, повторно — бан 1–3 дня.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -794,9 +857,267 @@
                         </div>
                     </div>
                 </div>
+                <div class="rule-card penalty-card">
+                    <div class="rule-number">5.18</div>
+                    <div class="rule-content">
+                        <h3>Prop Spam</h3>
+                        <p>Запрещено размещение большого количества пропов/предметов в одном месте, на основной карте или во время ивента.</p>
+                        <div class="penalty">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Выговор от старшей администрации / бан до недели</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rule-card penalty-card">
+                    <div class="rule-number">5.19</div>
+                    <div class="rule-content">
+                        <h3>Bug Abuse / Bug Use</h3>
+                        <p>Запрещено использование багов/недоработок/ошибок карты для получения любого преимущества.</p>
+                        <div class="penalty">
+                            <i class="fas fa-ban"></i>
+                            <span>Тюрьма от 20 до 120 минут / бан от 1 дня до пермача</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rule-card penalty-card">
+                    <div class="rule-number">5.20</div>
+                    <div class="rule-content">
+                        <h3>Реклама</h3>
+                        <p>Запрещена реклама сторонних ресурсов/проектов в любой форме, включая ники (пункт 5.14 должен соблюдаться перед вынесением наказания).</p>
+                        <div class="penalty">
+                            <i class="fas fa-ban"></i>
+                            <span>Перманентный бан</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rule-card penalty-card">
+                    <div class="rule-number">5.21</div>
+                    <div class="rule-content">
+                        <h3>Распространение личной информации</h3>
+                        <p>Запрещено распространение личной информации (фото/личные страницы/паспортные данные/номера телефонов) любого пользователя (игрока/администратора) проекта. Будьте осторожны перед распространением любой личной информации, у правил нет исключений.</p>
+                        <div class="penalty">
+                            <i class="fas fa-ban"></i>
+                            <span>Перманентный бан</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rule-card penalty-card">
+                    <div class="rule-number">5.22</div>
+                    <div class="rule-content">
+                        <h3>Обман или клевета</h3>
+                        <p>Запрещено обманывать или клеветать на других пользователей (игроков/администраторов). Для подачи жалобы необходимо иметь объективные доказательства (записи/скриншоты), полностью показывающие указанное нарушение.</p>
+                        <div class="penalty">
+                            <i class="fas fa-ban"></i>
+                            <span>Бан от 1 часа до пермача</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rule-card penalty-card">
+                    <div class="rule-number">5.23</div>
+                    <div class="rule-content">
+                        <h3>Использование стороннего ПО</h3>
+                        <p>Запрещено использование стороннего программного обеспечения, дающего преимущество над другими пользователями.</p>
+                        <div class="penalty">
+                            <i class="fas fa-ban"></i>
+                            <span>Перманентный бан</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rule-card penalty-card">
+                    <div class="rule-number">5.24</div>
+                    <div class="rule-content">
+                        <h3>Личная выгода от игроков</h3>
+                        <p>Запрещены попытки получения личной выгоды от игроков путём шантажа, под угрозой подачи жалобы на них за нарушение игровых правил, или других действий, приводящих к выгоде для подающего жалобу на игрока. Такие жалобы рассматриваются исключительно высшей администрацией.</p>
+                        <div class="penalty">
+                            <i class="fas fa-ban"></i>
+                            <span>Бан от 7 дней до пермача</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rule-card penalty-card">
+                    <div class="rule-number">5.25</div>
+                    <div class="rule-content">
+                        <h3>Rules Abuse (RA)</h3>
+                        <p>Запрещены любые попытки манипулирования, обмана или введения в заблуждение игроков и административного состава проекта.</p>
+                        <div class="penalty">
+                            <i class="fas fa-ban"></i>
+                            <span>Бан от 1 дня до 14 дней</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Chapter 6 -->
+    <section id="chapter6" class="section chapter-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ГЛАВА 6. ПРАВИЛА ОРГАНИЗАЦИИ И ПРОВЕДЕНИЯ ИВЕНТОВ</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="chapter-content">
+                <div class="rule-card">
+                    <div class="rule-number">6.1</div>
+                    <div class="rule-content">
+                        <h3>Регистрация и уведомления</h3>
+                        <p>Перед проведением ивента ивент-менеджер обязан зарегистрировать или согласовать его план в специальном канале Discord.</p>
+                        <p>О переносе или отмене ивента необходимо уведомить как минимум за 3 часа до его начала.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">6.2</div>
+                    <div class="rule-content">
+                        <h3>Информирование участников</h3>
+                        <p>Ивент-менеджер должен заранее проинформировать все задействованные игровые группы (легионы, отряды и т.д.) об их главных ролях и задачах в рамках события.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">6.3</div>
+                    <div class="rule-content">
+                        <h3>Команда проведения и субординация</h3>
+                        <p>Проводить ивент разрешается только при наличии главного организатора (того, кто его регистрировал) и ассистента (другого ивент-менеджера) для помощи.</p>
+                        <p>Все задействованные ивент-менеджеры обязаны использовать профессию "Администратор" для решения организационных вопросов.</p>
+                        <p>Младшему составу администрации запрещено вмешиваться в ход ивента (телепортировать игроков, менять профессии и т.д.) без прямого разрешения главного организатора.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">6.4</div>
+                    <div class="rule-content">
+                        <h3>Время на подготовку</h3>
+                        <p>На организационную подготовку ивента перед его стартом отводится не более 30 минут.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">6.5</div>
+                    <div class="rule-content">
+                        <h3>Ограничения для ивент-менеджеров</h3>
+                        <p>Запрещено использовать для проведения ивента личные или донатные профессии.</p>
+                        <p>Запрещено выдавать участникам оружие, которого нет в стандартном арсенале их профессии. Для использования особого оружия необходимо заранее указать это при регистрации ивента.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 7 -->
+    <section id="chapter7" class="section chapter-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ГЛАВА 7. ПРАВИЛА ДЛЯ МЛАДШЕГО СОСТАВА АДМИНИСТРАЦИИ</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="chapter-content">
+                <div class="rule-card">
+                    <div class="rule-number">7.1</div>
+                    <div class="rule-content">
+                        <h3>Адекватность и сдержанность</h3>
+                        <p>Запрещено оскорблять или унижать пользователей (игроков/администраторов).</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">7.2</div>
+                    <div class="rule-content">
+                        <h3>Ограничения на специальные режимы</h3>
+                        <p>Запрещено использовать "Noclip" для телепортации или полёта вне профессии администратора, а также находиться в профессии администратора вне режима "Cloak".</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">7.3</div>
+                    <div class="rule-content">
+                        <h3>Использование административных инструментов</h3>
+                        <p>Запрещено использовать административные инструменты (выдача профессий, оружия, повышений, прав) без обоснованных причин. При использовании необходимо отправить отчёт в специальный канал Discord.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">7.4</div>
+                    <div class="rule-content">
+                        <h3>Обязанность отвечать на запросы</h3>
+                        <p>Вся администрация обязана отвечать на запросы игроков о помощи, с правом отказа на некорректные запросы.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">7.5</div>
+                    <div class="rule-content">
+                        <h3>Выход из профессии</h3>
+                        <p>Администраторы обязаны выходить из профессии в укромном месте (невидимо для игроков или на спавне), когда профессия не предназначена для ролевой игры. Запрещено вмешиваться в отыгрыш персонажей игроков, кроме случаев:</p>
+                        <ul>
+                            <li>7.5.1. Оказания помощи игрокам</li>
+                            <li>7.5.2. Решения конфликтов или вынесения наказаний, когда иного решения нет</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">7.6</div>
+                    <div class="rule-content">
+                        <h3>Работа в NonRP зоне</h3>
+                        <p>Все жалобы должны рассматриваться в специальной NonRP зоне. Запрещено:</p>
+                        <ul>
+                            <li>7.6.1. Вмешиваться в расследование другого администратора в NonRP зоне</li>
+                            <li>7.6.2. Проводить несколько расследований одновременно в одной NonRP зоне</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">7.7</div>
+                    <div class="rule-content">
+                        <h3>Запрет вмешательства в RP процесс</h3>
+                        <p>Строго запрещено администраторам вмешиваться в любой RP процесс, кроме случаев по пунктам 7.5.1 и 7.5.2.</p>
+                        <p>7.7.1. "Вмешательство в RP процесс" означает подслушивание пользователей во время RP разговоров (совещания, тренировки, личные беседы). При просьбе пользователей "не вмешиваться в RP процесс" администратор обязан покинуть RP зону. Исключения: пункты 7.5.1 и 7.5.2.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">7.8</div>
+                    <div class="rule-content">
+                        <h3>Соблюдение правил проекта</h3>
+                        <p>Администраторы обязаны строго соблюдать правила проекта. Отклонения от сроков наказаний (неправильная длительность) или игнорирование нарушений повлечёт строгое наказание от старшей администрации, вплоть до снятия с должности.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter 8 -->
+    <section id="chapter8" class="section chapter-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ГЛАВА 8. ПРАВИЛА ДЛЯ СТАРШЕГО СОСТАВА АДМИНИСТРАЦИИ</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="chapter-content">
+                <div class="rule-card">
+                    <div class="rule-number">8.1</div>
+                    <div class="rule-content">
+                        <h3>Применение правил младшего состава</h3>
+                        <p>Все правила, действующие для младшего состава администрации (глава 7), также распространяются на старший состав администрации.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">8.2</div>
+                    <div class="rule-content">
+                        <h3>Уведомление об отсутствии</h3>
+                        <p>Старший администратор, намеренно отсутствующий на сервере длительное время, обязан уведомить руководство сервера о причине своего отсутствия.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">8.3</div>
+                    <div class="rule-content">
+                        <h3>Управление подчинёнными</h3>
+                        <p>Старший состав администрации обязан вести учёт своих подчинённых младших администраторов в таблице, проводить набор, проверки и обучение своего состава.</p>
+                        <p>8.3.1. Старший состав администрации несёт полную ответственность за действия младшего состава администрации.</p>
+                    </div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-number">8.4</div>
+                    <div class="rule-content">
+                        <h3>Уведомление об изменениях</h3>
+                        <p>Старший состав администрации обязан уведомлять руководство сервера о любых изменениях в своей работе, привилегиях, уставах или документах.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
